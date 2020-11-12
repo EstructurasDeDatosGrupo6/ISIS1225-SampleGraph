@@ -58,12 +58,14 @@ def printMenu():
     print("*******************************************")
     print("Bienvenido")
     print("1- Inicializar Analizador")
-    print("2- Cargar información de buses de singapur")
-    print("3- Calcular componentes conectados")
-    print("4- Establecer estación base:")
-    print("5- Hay camino entre estacion base y estación: ")
-    print("6- Ruta de costo mínimo desde la estación base y estación: ")
-    print("7- Estación que sirve a mas rutas: ")
+    print("2- Cargar información de citibike")
+    print("3- Cantidad de clusters")
+    print("4- Ruta turistica Circular")
+    print("5- Estaciones Críticas ")
+    print("6- Ruta turística por resistencia")
+    print("7- Recomendador de Rutas ")
+    print("8- Ruta de interés turístico")
+    print("9- Identificación de Estaciones para Publicidad BONO")
     print("0- Salir")
     print("*******************************************")
 
@@ -112,7 +114,16 @@ def optionSeven():
     maxvert, maxdeg = controller.servedRoutes(cont)
     print('Estación: ' + maxvert + '  Total rutas servidas: '
           + str(maxdeg))
+        
+def optionEight():
+    maxvert, maxdeg = controller.servedRoutes(cont)
+    print('Estación: ' + maxvert + '  Total rutas servidas: '
+          + str(maxdeg))
 
+def optionNine():
+    maxvert, maxdeg = controller.servedRoutes(cont)
+    print('Estación: ' + maxvert + '  Total rutas servidas: '
+          + str(maxdeg))
 
 """
 Menu principal
@@ -152,6 +163,14 @@ while True:
 
     elif int(inputs[0]) == 7:
         executiontime = timeit.timeit(optionSeven, number=1)
+        print("Tiempo de ejecución: " + str(executiontime))
+    
+    elif int(inputs[0]) == 8:
+        executiontime = timeit.timeit(optionEight, number=1)
+        print("Tiempo de ejecución: " + str(executiontime))
+    
+    elif int(inputs[0]) == 9:
+        executiontime = timeit.timeit(optionNine, number=1)
         print("Tiempo de ejecución: " + str(executiontime))
 
     else:
